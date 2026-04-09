@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 20 10% 4%;
+    --foreground: 30 10% 92%;
+
+    --card: 20 8% 7%;
+    --card-foreground: 30 10% 92%;
+
+    --popover: 20 8% 7%;
+    --popover-foreground: 30 10% 92%;
+
+    --primary: 25 90% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 20 6% 11%;
+    --secondary-foreground: 30 8% 75%;
+
+    --muted: 20 6% 13%;
+    --muted-foreground: 25 5% 45%;
+
+    --accent: 20 6% 14%;
+    --accent-foreground: 30 10% 92%;
+
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 25 6% 12%;
+    --input: 25 6% 12%;
+    --ring: 25 50% 40%;
+
+    --radius: 0.75rem;
+
+    --fossee-orange: 25 90% 55%;
+    --fossee-surface: 20 10% 5%;
+    --fossee-surface-raised: 20 8% 9%;
+
+    --sidebar-background: 20 10% 3%;
+    --sidebar-foreground: 30 8% 75%;
+    --sidebar-primary: 25 90% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 20 6% 11%;
+    --sidebar-accent-foreground: 30 8% 75%;
+    --sidebar-border: 25 6% 10%;
+    --sidebar-ring: 25 50% 40%;
+
+    /* Premium glow tokens */
+    --glow-orange: 25 90% 55%;
+    --glow-warm: 35 80% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', system-ui, sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background: hsl(25 90% 55% / 0.3);
+    color: hsl(30 10% 95%);
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .card-elevated {
+    @apply bg-card rounded-2xl border border-border p-5 transition-all duration-300;
+    box-shadow: 0 1px 3px 0 hsl(0 0% 0% / 0.3), 0 0 0 1px hsl(25 6% 12% / 0.5);
+  }
+
+  .card-elevated:hover {
+    border-color: hsl(25 90% 55% / 0.15);
+    box-shadow: 0 4px 24px -4px hsl(25 90% 55% / 0.08), 0 0 0 1px hsl(25 90% 55% / 0.1);
+  }
+
+  .card-glass {
+    @apply bg-card/80 backdrop-blur-xl rounded-2xl border border-border/60;
+    box-shadow: 0 8px 32px -8px hsl(0 0% 0% / 0.4);
+  }
+
+  .card-workshop {
+    @apply bg-card rounded-2xl border border-border p-5 transition-all duration-200;
+  }
+
+  .badge-status {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+
+  .badge-pending {
+    background: hsl(25 90% 55% / 0.12);
+    color: hsl(25 90% 60%);
+  }
+
+  .badge-approved {
+    background: hsl(155 55% 42% / 0.12);
+    color: hsl(155 55% 55%);
+  }
+
+  .badge-rejected {
+    @apply bg-destructive/12;
+    color: hsl(0 65% 60%);
+  }
+
+  .input-field {
+    @apply flex h-11 w-full rounded-xl border border-input bg-secondary/60 px-3.5 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 transition-all text-foreground;
+  }
+
+  .section-heading {
+    @apply text-2xl sm:text-3xl font-bold tracking-tight text-foreground;
+    font-family: 'Outfit', system-ui, sans-serif;
+  }
+
+  .section-subheading {
+    @apply text-base sm:text-lg text-muted-foreground max-w-2xl;
+  }
+
+  .skip-to-content {
+    @apply sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-lg;
+  }
+
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  /* Premium stat card */
+  .stat-card {
+    @apply bg-card rounded-2xl border border-border p-4 relative overflow-hidden;
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(25 90% 55% / 0.3), transparent);
+  }
+
+  /* Ambient glow for hero sections */
+  .ambient-glow {
+    position: relative;
+  }
+
+  .ambient-glow::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -20%;
+    width: 60%;
+    height: 80%;
+    background: radial-gradient(ellipse, hsl(25 90% 55% / 0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slide-up {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.4s ease-out;
+  }
+}
