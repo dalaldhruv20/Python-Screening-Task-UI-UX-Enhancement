@@ -120,7 +120,7 @@
   }
 
   .badge-rejected {
-    @apply bg-destructive/12;
+    background: hsl(0 65% 50% / 0.12);
     color: hsl(0 65% 60%);
   }
 
