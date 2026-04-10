@@ -1,6 +1,9 @@
 # FOSSEE Workshop Booking — UI/UX Redesign
 
-A modern, mobile-first redesign of the [FOSSEE Workshop Booking](https://github.com/FOSSEE/workshop_booking) platform, built with **React 18**, **TypeScript**, **Tailwind CSS**, and **Vite**. The original Django backend is preserved; this project enhances only the frontend UI/UX layer.
+A modern, mobile-first redesign of the [FOSSEE Workshop Booking](https://github.com/FOSSEE/workshop_booking) platform, built with **React 18**, **TypeScript**, **Tailwind CSS**, and **Vite**.  
+The original Django backend is preserved while the frontend has been completely enhanced for better UI/UX.
+
+**Live Demo:** [FOSSEE Workshop](https://fossee-workshops.netlify.app)
 
 ---
 
@@ -105,7 +108,7 @@ A modern, mobile-first redesign of the [FOSSEE Workshop Booking](https://github.
 - Faster and cleaner user interactions  
 ---
 
-##  Design & Implementation
+##  Reasoning
 
 ###  Design Principles
 
