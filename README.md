@@ -4,17 +4,105 @@ A modern, mobile-first redesign of the [FOSSEE Workshop Booking](https://github.
 
 ---
 
-## 📸 Screenshots
+## 📸 UI/UX Improvements
 
-> Before-and-after comparisons are included in the `docs/screenshots/` folder.
+> The redesign focuses on improving usability, accessibility, and mobile responsiveness while keeping the core functionality intact.  
+> Below are before-and-after comparisons along with the reasoning behind each improvement.
 
-| Page | Before | After |
-|------|--------|-------|
-| Login | Basic Bootstrap form | Dark glassmorphic card with ambient gradient, FOSSEE branding |
-| Registration | Single long form | Multi-step, one-question-at-a-time flow with role selection |
-| Dashboard | Bootstrap sidebar + tables | Mobile-first bottom-tab navigation, role-based views |
-| Workshops | Plain list | Card-based layout with status badges, search & filter |
-| Statistics | Basic tables | Visual charts with Recharts, monthly filters |
+---
+
+###  Login Page
+| Before | After |
+|--------|-------|
+| ![](screenshots/login_before.png) | ![](screenshots/login_after.png) |
+
+**What was changed:**
+- Replaced basic Bootstrap form with a modern glassmorphic UI  
+- Improved spacing, alignment, and CTA visibility  
+- Added branding and gradient-based visual depth  
+
+**Impact:**
+- Stronger first impression and visual appeal  
+- Better input focus and readability  
+- More engaging and intuitive login experience  
+
+---
+
+###  Registration / Onboarding
+| Before | After |
+|--------|-------|
+| ![](screenshots/register_before.png) | ![](screenshots/onboarding_after.png) |
+
+**What was changed:**
+- Converted long static form into a step-by-step onboarding flow  
+- Introduced role selection (Coordinator / Instructor)  
+- Reduced visible fields at once  
+
+**Impact:**
+- Lower cognitive load  
+- Increased user engagement  
+- Smoother and more guided user flow  
+
+---
+
+###  Dashboard
+| Before | After |
+|--------|-------|
+| ![](screenshots/dashboard_before.png) | ![](screenshots/dashboard_after.png) |
+
+**What was changed:**
+- Redesigned layout with modern UI components  
+- Introduced bottom navigation for mobile-first usage  
+- Improved spacing, typography, and structure  
+
+**Impact:**
+- Faster navigation on mobile devices  
+- Better content organization  
+- Cleaner and distraction-free interface  
+
+---
+
+###  Workshop Statistics
+| Before | After |
+|--------|-------|
+| ![](screenshots/statistics_before.png) | ![](screenshots/statistics_after.png) |
+
+**What was changed:**
+- Replaced tabular data with visual charts and cards  
+- Added filtering and structured layout  
+- Improved data grouping  
+
+**Impact:**
+- Easier data interpretation  
+- More interactive experience  
+- Better decision-making support  
+
+---
+
+###  Profile / User Interface
+| Before | After |
+|--------|-------|
+| ![](screenshots/admin_before.png) | ![](screenshots/profile_after.png) |
+
+**What was changed:**
+- Replaced admin-heavy UI with clean user profile screen  
+- Structured personal information layout  
+- Added clear action buttons  
+
+**Impact:**
+- More intuitive user interaction  
+- Improved clarity and usability  
+- Better overall user experience  
+
+---
+
+###  Summary of Improvements
+
+- Mobile-first responsive design  
+- Reduced cognitive load across flows  
+- Improved navigation and accessibility  
+- Modern visual design aligned with current UI trends  
+- Faster and cleaner user interactions  
 
 ---
 
