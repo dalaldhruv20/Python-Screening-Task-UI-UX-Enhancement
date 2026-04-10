@@ -126,6 +126,9 @@ const Auth = () => {
           src="/fossee-logo-full.png"
           alt="FOSSEE — Free and Open Source Software for Education"
           className="h-14 sm:h-16 w-auto object-contain drop-shadow-lg"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
       </div>
 
