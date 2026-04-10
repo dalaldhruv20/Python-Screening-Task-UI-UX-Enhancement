@@ -4,7 +4,7 @@ A modern, mobile-first redesign of the [FOSSEE Workshop Booking](https://github.
 
 ---
 
-## 📸 UI/UX Improvements
+##  UI/UX Improvements
 
 > The redesign focuses on improving usability, accessibility, and mobile responsiveness while keeping the core functionality intact.  
 > Below are before-and-after comparisons along with the reasoning behind each improvement.
@@ -14,7 +14,7 @@ A modern, mobile-first redesign of the [FOSSEE Workshop Booking](https://github.
 ###  Login Page
 | Before | After |
 |--------|-------|
-| ![](screenshots/login_before.png) | ![](screenshots/login_after.png) |
+| <p align="center"><img src="screenshots/login_before.png" height="250"/></p> | <p align="center"><img src="screenshots/login_after.png" height="250"/></p> |
 
 **What was changed:**
 - Replaced basic Bootstrap form with a modern glassmorphic UI  
@@ -31,7 +31,7 @@ A modern, mobile-first redesign of the [FOSSEE Workshop Booking](https://github.
 ###  Registration / Onboarding
 | Before | After |
 |--------|-------|
-| ![](screenshots/register_before.png) | ![](screenshots/onboarding_after.png) |
+| <p align="center"><img src="screenshots/register_before.png" height="250"/></p> | <p align="center"><img src="screenshots/onboarding_after.png" height="250"/></p> |
 
 **What was changed:**
 - Converted long static form into a step-by-step onboarding flow  
@@ -48,7 +48,7 @@ A modern, mobile-first redesign of the [FOSSEE Workshop Booking](https://github.
 ###  Dashboard
 | Before | After |
 |--------|-------|
-| ![](screenshots/dashboard_before.png) | ![](screenshots/dashboard_after.png) |
+| <p align="center"><img src="screenshots/dashboard_before.png" height="250"/></p> | <p align="center"><img src="screenshots/dashboard_after.png" height="250"/></p> |
 
 **What was changed:**
 - Redesigned layout with modern UI components  
@@ -65,7 +65,7 @@ A modern, mobile-first redesign of the [FOSSEE Workshop Booking](https://github.
 ###  Workshop Statistics
 | Before | After |
 |--------|-------|
-| ![](screenshots/statistics_before.png) | ![](screenshots/statistics_after.png) |
+| <p align="center"><img src="screenshots/statistics_before.png" height="250"/></p> | <p align="center"><img src="screenshots/statistics_after.png" height="250"/></p> |
 
 **What was changed:**
 - Replaced tabular data with visual charts and cards  
@@ -82,7 +82,7 @@ A modern, mobile-first redesign of the [FOSSEE Workshop Booking](https://github.
 ###  Profile / User Interface
 | Before | After |
 |--------|-------|
-| ![](screenshots/admin_before.png) | ![](screenshots/profile_after.png) |
+| <p align="center"><img src="screenshots/admin_before.png" height="250"/></p> | <p align="center"><img src="screenshots/profile_after.png" height="250"/></p> |
 
 **What was changed:**
 - Replaced admin-heavy UI with clean user profile screen  
@@ -103,62 +103,60 @@ A modern, mobile-first redesign of the [FOSSEE Workshop Booking](https://github.
 - Improved navigation and accessibility  
 - Modern visual design aligned with current UI trends  
 - Faster and cleaner user interactions  
+---
+
+## Reasoning
+
+###  Design Principles
+
+- **Mobile-First Approach**  
+  Designed primarily for mobile users with touch-friendly components, bottom navigation, and optimized layouts for small screens.
+
+- **Clear Visual Hierarchy**  
+  Used consistent typography and spacing to guide user attention. Highlighted key actions using FOSSEE’s accent color.
+
+- **Role-Based UX**  
+  Separate flows for Coordinators and Instructors to reduce clutter and show only relevant features.
+
+- **Simplified User Flow**  
+  Replaced long forms with step-by-step onboarding to reduce cognitive load and improve usability.
+
+- **Accessibility Considerations**  
+  Used semantic HTML, proper labels, and ensured good contrast for better readability and navigation.
 
 ---
 
-## 🎨 Design Principles
+###  Responsiveness
 
-### What design principles guided your improvements?
-
-1. **Mobile-First Design** — The primary audience is students on mobile devices. Every component was designed at 375px first, then scaled up. Bottom tab navigation, touch-friendly hit targets (≥44px), and full-width cards ensure usability on small screens.
-
-2. **Visual Hierarchy & Clarity** — We use a strict typographic system: **Gelasio** (serif) for headings to convey academic authority, and **Fira Sans** (sans-serif) for body text for readability. FOSSEE's orange accent (`hsl(30 85% 55%)`) is used sparingly for CTAs and active states, avoiding visual overload.
-
-3. **Glassmorphism with Purpose** — Frosted glass cards (`backdrop-blur`, subtle white borders) create depth without heavy shadows. This keeps the interface feeling modern and lightweight while maintaining readability.
-
-4. **Role-Based UX** — Coordinators and Instructors have different workflows, so they get different navigation tabs and dashboard views. This reduces cognitive load — users only see what's relevant to them.
-
-5. **Progressive Disclosure** — Registration uses a step-by-step flow (one field at a time) instead of a long form. This reduces abandonment and feels conversational rather than bureaucratic.
-
-6. **Accessibility** — Semantic HTML (`<nav>`, `<main>`, `<header>`), `aria-label` attributes, `aria-current="page"` for active nav items, keyboard navigation support, and sufficient color contrast ratios.
-
-### How did you ensure responsiveness across devices?
-
-- **CSS-first approach**: Tailwind's responsive prefixes (`sm:`, `lg:`) with a mobile-first base. No JavaScript-based responsive logic.
-- **Flexible layouts**: `max-w-3xl mx-auto` containers, `grid-cols-1 sm:grid-cols-2` card grids.
-- **Viewport-relative units**: Gradient background glows use `vw`/`vh` units so they scale proportionally on any screen size.
-- **Touch optimization**: All interactive elements have minimum 44px touch targets. Bottom navigation uses `safe-area-inset-bottom` for devices with home indicators.
-- **Testing**: Verified across 375px (iPhone SE), 390px (iPhone 14), 768px (iPad), and 1440px (desktop) viewports.
-
-### What trade-offs did you make between design and performance?
-
-1. **CSS gradients over images**: The login background uses pure CSS `radial-gradient` layers instead of a high-res background image. This eliminates a network request, reduces LCP, and looks identical on all screen sizes — at the cost of slightly less photographic realism.
-
-2. **Font loading strategy**: We use Google Fonts with `display=swap` for Gelasio and Fira Sans. This means a brief flash of system fonts on first load, but ensures text is always visible (no FOIT).
-
-3. **Backdrop blur**: `backdrop-blur-2xl` is GPU-accelerated on modern devices but can cause jank on older Android browsers. We limit blur to key UI elements (cards, nav bars) rather than applying it globally.
-
-4. **No heavy animation library**: Instead of Framer Motion or GSAP, we use CSS keyframe animations (`fade-in`, `slide-up`). This keeps the bundle size small (~0 KB added) while still providing smooth transitions.
-
-5. **Component granularity**: We use shadcn/ui primitives for buttons, dialogs, and form elements. This gives us accessible, well-tested components without the overhead of a full component library like MUI.
-
-### What was the most challenging part of the task and how did you approach it?
-
-The most challenging aspect was **designing the multi-step registration flow** that feels native and conversational while maintaining all the fields required by the Django backend (first name, last name, email, username, password, institution, department, role).
-
-**Approach:**
-- Studied onboarding flows from apps like Typeform and Linear for inspiration.
-- Implemented a step counter with progress bar so users know where they are.
-- Added keyboard support — pressing Enter advances to the next step.
-- Used auto-focus on each input field transition for seamless typing.
-- Added a back button at every step so users never feel trapped.
-- Validated each field before allowing progression, with clear visual feedback (disabled vs. active button states).
-
-The second challenge was **role-based navigation** — ensuring coordinators and instructors see different dashboards without duplicating code. This was solved with a shared `DashboardLayout` component that conditionally renders tab arrays based on `user.role`.
+- Built with a **mobile-first CSS approach** using responsive breakpoints  
+- Flexible layouts using grids and containers  
+- Optimized touch targets for smaller screens  
+- Tested across mobile, tablet, and desktop screen sizes  
 
 ---
 
-## 🏗️ Project Structure
+###  Design vs Performance Trade-offs
+
+- Used **CSS gradients instead of images** to reduce load time  
+- Limited use of heavy effects (blur, animations) to maintain smooth performance  
+- Avoided large UI libraries to keep bundle size small  
+- Used system-friendly font loading for faster rendering  
+
+---
+
+###  Challenges & Approach
+
+- **Multi-step Registration Flow**  
+  Designed a step-by-step form to replace a long static form, improving user engagement and reducing friction.
+
+- **Role-Based Navigation**  
+  Implemented conditional layouts to support different user roles without duplicating code.
+
+- **Balancing Design & Performance**  
+  Focused on modern UI while ensuring fast load times and responsiveness.
+---
+
+##  Project Structure
 
 ```
 ├── public/                          # Static assets
@@ -225,7 +223,7 @@ The second challenge was **role-based navigation** — ensuring coordinators and
 
 ---
 
-## 🚀 Setup Instructions
+##  Setup Instructions
 
 ### Prerequisites
 
@@ -292,7 +290,7 @@ Then use `fetch('/api/...')` in React components to call Django endpoints.
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Layer | Technology |
 |-------|------------|
