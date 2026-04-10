@@ -35,7 +35,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
       <header className="sticky top-0 z-40 border-b border-border/60" style={{ background: 'hsl(20 10% 4% / 0.92)', backdropFilter: 'blur(20px) saturate(1.8)' }}>
         <div className="flex h-14 items-center justify-between px-4 sm:px-6 max-w-3xl mx-auto w-full">
           <div className="flex items-center">
-            <img src="/fossee-logo-full.png" alt="FOSSEE" className="h-7 w-auto object-contain" />
+            <img src="/fossee-logo-full.png" alt="FOSSEE" className="h-7 w-auto object-contain" loading="eager" fetchPriority="high" decoding="async" />
           </div>
           <Link
             to="/profile"
