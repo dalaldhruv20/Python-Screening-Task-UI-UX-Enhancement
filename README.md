@@ -218,15 +218,7 @@ Then use `fetch('/api/...')` in React components to call Django endpoints.
 
 ---
 
-## 📋 Submission Checklist
 
-- [x] Code is readable and well-structured
-- [x] Git history shows progressive work (no single commit dumps)
-- [x] README includes reasoning answers and setup instructions
-- [x] Screenshots or live demo link included
-- [x] Code is documented where necessary
-
----
 
 ## 📄 License
 
