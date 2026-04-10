@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Calendar, Users, BookOpen, ArrowRight, CheckCircle, TrendingUp, Clock, Star, Sparkles } from "lucide-react";
+import { Calendar, Users, BookOpen, ArrowRight, CheckCircle, TrendingUp, Clock, Star, } from "lucide-react";
 import DashboardLayout from "@/components/layout/DashboardLayout";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useUser } from "@/contexts/UserContext";
@@ -47,13 +47,6 @@ const CoordinatorHome = () => {
             <div className="absolute top-0 right-0 w-48 h-48 rounded-full blur-[80px] pointer-events-none" style={{ background: 'hsl(25 90% 55% / 0.12)' }} />
             <div className="absolute bottom-0 left-0 w-32 h-32 rounded-full blur-[60px] pointer-events-none" style={{ background: 'hsl(35 80% 50% / 0.06)' }} />
             <div className="relative">
-              <div className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[10px] font-medium mb-4" style={{
-                background: 'hsl(25 90% 55% / 0.1)',
-                color: 'hsl(25 90% 60%)',
-                border: '1px solid hsl(25 90% 55% / 0.15)',
-              }}>
-                <Sparkles className="h-3 w-3" /> Free Workshops by IIT Bombay
-              </div>
               <h1 className="text-2xl sm:text-3xl font-bold tracking-tight leading-tight mb-3 font-heading text-foreground">
                 Book FOSSEE Workshops for Your Institution
               </h1>
